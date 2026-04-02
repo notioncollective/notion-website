@@ -104,6 +104,9 @@ a:hover {
 /* Footer */
 
 .site-footer {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
   margin-top: 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--nc-color-border);
@@ -116,7 +119,12 @@ a:hover {
 }
 
 .site-footer p {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
+}
+
+.site-footer p:first-child::after {
+  content: "·";
+  margin-left: 1rem;
 }
 
 /* Lists */
