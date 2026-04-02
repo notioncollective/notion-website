@@ -1,58 +1,37 @@
-/* Fonts */
+@import url('normalize.css');
+@import url('fonts.css');
 
-@font-face {
-  font-family: "League Gothic";
-  src: url("fonts/LeagueGothic-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* Custom Properties */
+
+:root {
+  --nc-color-text: hsl(0, 0%, 10%);
+  --nc-color-heading: hsl(0, 0%, 7%);
+  --nc-color-bg: hsl(0, 0%, 100%);
+  --nc-color-link-underline: hsl(0, 0%, 60%);
+  --nc-color-meta: hsl(0, 0%, 40%);
+  --nc-color-border: hsl(0, 0%, 88%);
+  --nc-color-input-border: hsl(0, 0%, 80%);
+  --nc-color-button-bg: hsl(0, 0%, 10%);
+  --nc-color-button-hover: hsl(0, 0%, 20%);
+
+  --nc-font-family-primary: 'Inter', system-ui, sans-serif;
+  --nc-font-family-display: 'League Gothic', sans-serif;
+
+  --nc-font-size-base: calc(75% + 0.5vw);
 }
 
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Reset & Base */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Base */
 
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-size: var(--nc-font-size-base);
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--nc-font-family-primary);
   font-weight: 400;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #fff;
+  color: var(--nc-color-text);
+  background: var(--nc-color-bg);
   max-width: 48rem;
   margin: 0 auto;
   padding: 2rem 1.5rem;
@@ -66,7 +45,7 @@ h3 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.02em;
-  color: #111;
+  color: var(--nc-color-heading);
 }
 
 h1 {
@@ -93,14 +72,14 @@ p {
 /* Links */
 
 a {
-  color: #1a1a1a;
-  text-decoration-color: #999;
+  color: var(--nc-color-text);
+  text-decoration-color: var(--nc-color-link-underline);
   text-underline-offset: 0.15em;
   transition: text-decoration-color 0.15s;
 }
 
 a:hover {
-  text-decoration-color: #1a1a1a;
+  text-decoration-color: var(--nc-color-text);
 }
 
 /* Navigation */
@@ -110,16 +89,16 @@ a:hover {
 }
 
 .site-nav a {
-  font-family: "League Gothic", sans-serif;
-  font-size: 1.4rem;
+  font-family: var(--nc-font-family-display);
+  font-size: 3rem;
   letter-spacing: 0.02em;
   text-decoration: none;
-  color: #111;
+  color: var(--nc-color-heading);
 }
 
 .site-nav a:hover {
   text-decoration: underline;
-  text-decoration-color: #111;
+  text-decoration-color: var(--nc-color-heading);
 }
 
 /* Footer */
@@ -127,13 +106,13 @@ a:hover {
 .site-footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--nc-color-border);
   font-size: 0.875rem;
-  color: #666;
+  color: var(--nc-color-meta);
 }
 
 .site-footer a {
-  color: #666;
+  color: var(--nc-color-meta);
 }
 
 .site-footer p {
@@ -157,7 +136,7 @@ li {
 dl.meta {
   margin-bottom: 1.5rem;
   font-size: 0.9375rem;
-  color: #555;
+  color: var(--nc-color-meta);
 }
 
 dl.meta dt {
@@ -199,7 +178,7 @@ dl.meta dd + dd {
 }
 
 .collaborators li:not(:last-child)::after {
-  content: ", ";
+  content: ', ';
 }
 
 /* Project links (read more, view website) */
@@ -224,7 +203,7 @@ dl.meta dd + dd {
 }
 
 .people-list li:not(:last-child)::after {
-  content: ", ";
+  content: ', ';
 }
 
 /* Contact */
@@ -242,14 +221,14 @@ form label {
   margin-bottom: 0.25rem;
 }
 
-form input[type="text"],
-form input[type="email"] {
+form input[type='text'],
+form input[type='email'] {
   display: block;
   width: 100%;
   max-width: 24rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--nc-color-input-border);
   border-radius: 2px;
   font-family: inherit;
   font-size: 1rem;
@@ -261,15 +240,15 @@ form button {
   font-weight: 500;
   letter-spacing: 0.05em;
   padding: 0.5rem 1.5rem;
-  background: #1a1a1a;
-  color: #fff;
+  background: var(--nc-color-button-bg);
+  color: var(--nc-color-bg);
   border: none;
   border-radius: 2px;
   cursor: pointer;
 }
 
 form button:hover {
-  background: #333;
+  background: var(--nc-color-button-hover);
 }
 
 /* Responsive */
