@@ -10,14 +10,14 @@
   --nc-color-link-underline: hsl(0, 0%, 60%);
   --nc-color-meta: hsl(0, 0%, 40%);
   --nc-color-border: hsl(0, 0%, 88%);
-  --nc-color-input-border: hsl(0, 0%, 80%);
-  --nc-color-button-bg: hsl(0, 0%, 10%);
-  --nc-color-button-hover: hsl(0, 0%, 20%);
 
-  --nc-font-family-primary: 'Inter', system-ui, sans-serif;
+  --nc-font-family-primary: 'Work Sans', system-ui, sans-serif;
   --nc-font-family-display: 'League Gothic', sans-serif;
 
   --nc-font-size-base: calc(75% + 0.5vw);
+  --nc-h1-font-size: 2rem;
+  --nc-h2-font-size: 1.8rem;
+  --nc-h3-font-size: 1.4rem;
 }
 
 /* Base */
@@ -42,27 +42,29 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.02em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
   color: var(--nc-color-heading);
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: var(--nc-h1-font-size);
+  /* margin-bottom: 1rem; */
 }
 
 h2 {
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
+  font-size: var(--nc-h2-font-size);
+  /* margin-top: 2.5rem;
+  margin-bottom: 0.75rem; */
 }
 
 h3 {
-  font-size: 1.4rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: var(--nc-h2-font-size);
+  /* margin-top: 2rem;
+  margin-bottom: 0.5rem; */
 }
 
 p {
@@ -123,7 +125,7 @@ a:hover {
 }
 
 .site-footer p:first-child::after {
-  content: "·";
+  content: '·';
   margin-left: 1rem;
 }
 
@@ -212,51 +214,6 @@ dl.meta dd + dd {
 
 .people-list li:not(:last-child)::after {
   content: ', ';
-}
-
-/* Contact */
-
-address {
-  font-style: normal;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-form label {
-  display: block;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-}
-
-form input[type='text'],
-form input[type='email'] {
-  display: block;
-  width: 100%;
-  max-width: 24rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--nc-color-input-border);
-  border-radius: 2px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-form button {
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  padding: 0.5rem 1.5rem;
-  background: var(--nc-color-button-bg);
-  color: var(--nc-color-bg);
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: var(--nc-color-button-hover);
 }
 
 /* Responsive */
